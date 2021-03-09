@@ -1,4 +1,3 @@
-from pprint import pprint
 text = []
 class name:
     def __init__(self, filename):
@@ -27,10 +26,12 @@ second.count_lines()
 third.count_lines()
 
 def sort():
-    sort_text = sorted(text, reverse=True)
+    sort_text = sorted(text)
     for element in sort_text:
         for elem in element:
-            pprint(elem)
-pprint(sort())
+            with open("final_file.txt", "a") as f:
+                print(elem, file=f)
+
+sort()
 
 
